@@ -10,7 +10,13 @@
     "target": "es5",
     "allowJs": true,
     "jsx": "react",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@context": ["./src/context"],
+      "@components": ["./src/components"],
+      "@types": ["./src/types"],
+      "@theme": ["./src/theme"]
+    }
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/app/**/*"]
 }

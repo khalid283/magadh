@@ -4,7 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: ['./src/index.tsx'],
+  entry: ['./src/app/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
@@ -48,7 +48,13 @@ const config = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    alias: {
+      '@contexts': path.resolve(__dirname, 'src/contexts'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@types': path.resolve(__dirname, 'src/types'),
+      '@theme': path.resolve(__dirname, 'src/theme')
+    }
   }
 };
 

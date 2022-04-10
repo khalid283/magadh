@@ -1,5 +1,10 @@
+const path = require('path');
+
 module.exports = {
-  stories: ['../components/**/*.stories.mdx', '../components/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    '../src/components/**/*.stories.mdx',
+    '../src/components/**/*.stories.@(js|jsx|ts|tsx)'
+  ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -8,5 +13,10 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     builder: 'webpack5'
+  },
+  webpackFinal: async (config) => {
+    config.resolve.alias['@contexts'] = path.resolve(__dirname, '../src/contexts');
+    config.resolve.alias['@theme'] = path.resolve(__dirname, '../src/theme');
+    return config;
   }
 };
