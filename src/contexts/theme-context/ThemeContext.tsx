@@ -1,13 +1,13 @@
 import React from 'react';
-import { ThemeActions, ITheme } from '../../types';
-import themeBase from '../../theme';
+import { ThemeActions, ITheme } from '@types';
+import themeBase from '@theme';
 
 type ThemeContextProps = { children: React.ReactNode; providedTheme: ITheme };
 
 const ThemeContext = React.createContext<{
   theme: ITheme;
   changeTheme: (action: ThemeActions) => void;
-}>(undefined);
+}>({ theme: { ...themeBase.base, ...themeBase.light }, changeTheme: () => null });
 
 function themeReducer(state: ITheme, action: ThemeActions) {
   switch (action.type) {

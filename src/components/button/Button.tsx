@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from '@contexts';
 
 export const Button = ({
   children,
@@ -7,6 +8,8 @@ export const Button = ({
   children: React.ReactNode;
   onClick: () => void;
 }) => {
+  const { theme } = useTheme();
+
   return <button onClick={onClick}>{children}</button>;
 };
 
