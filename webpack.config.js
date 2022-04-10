@@ -48,7 +48,10 @@ const config = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    alias: {
+      '@contexts': path.resolve(__dirname, 'src/contexts')
+    }
   }
 };
 
