@@ -12,7 +12,10 @@
     "jsx": "react",
     "esModuleInterop": true,
     "paths": {
-      "@context": ["./src/context"]
+      "@context": ["./src/context"],
+      "@components": ["./src/components"],
+      "@types": ["./src/types"],
+      "@theme": ["./src/theme"]
     }
   },
   "include": ["./src/app/**/*"]

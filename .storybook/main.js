@@ -16,6 +16,7 @@ module.exports = {
   },
   webpackFinal: async (config) => {
     config.resolve.alias['@contexts'] = path.resolve(__dirname, '../src/contexts');
+    config.resolve.alias['@theme'] = path.resolve(__dirname, '../src/theme');
     return config;
   }
 };
